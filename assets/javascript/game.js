@@ -1,8 +1,7 @@
-var game = ["TREE", "APPLE", "GREEN"];
-var choice = Math.floor(Math.random()*3);
-var answer = game[choice];
+var userLettersGuessed = [];
+var guessesLeft = 10;
+var wins = 0;
+var losses = 0;
 
-alert(answer)
-//test
 
-//more testing
+     
