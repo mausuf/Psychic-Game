@@ -1,3 +1,4 @@
+//TESTING JAVASCRIPT FILE//
 var userLettersGuessed = []; //Memory to hold user letters guessed
 var guessesLeft = 10; //Number of guess remaining
 var wins = 0; //Number of wins
@@ -8,9 +9,8 @@ var computerLetters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","
 document.onkeyup = function(event) {
 
     var userGuess = event.key;
-    //random computer guess
     var computerGuess = computerLetters[Math.floor(Math.random() * computerLetters.length)];
-    //player options
+
     var options = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
 
 
@@ -35,6 +35,8 @@ document.onkeyup = function(event) {
 				userLettersGuessed = [];
             }
         }
+        
     }
-    document.getElementById("userGuesses").innerHTML = [userGuess];
+    document.getElementById("userGuesses").innerHTML = userGuess;
 }
+
