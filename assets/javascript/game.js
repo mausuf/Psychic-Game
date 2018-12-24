@@ -8,9 +8,8 @@ var computerLetters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","
 document.onkeyup = function(event) {
 
     var userGuess = event.key;
-    //random computer guess
     var computerGuess = computerLetters[Math.floor(Math.random() * computerLetters.length)];
-    //player options
+
     var options = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
 
 
@@ -19,6 +18,7 @@ document.onkeyup = function(event) {
             wins++;
             guessesLeft = 10;
             userLettersGuessed = [];
+            alert("You Win! :)");
         }
         else {
             if (userLettersGuessed.includes(userGuess)) {
@@ -29,12 +29,16 @@ document.onkeyup = function(event) {
                 userLettersGuessed.push(userGuess);
             }
             if (guessesLeft == 0) {
-
+                alert("You Lost! :(");
 				guessesLeft = 10;
 				losses ++;
 				userLettersGuessed = [];
             }
         }
     }
-    document.getElementById("userGuesses").innerHTML = [userGuess];
+    document.getElementById("userGuesses").innerHTML = userLettersGuessed;
+    document.getElementById("numberOfWins").innerHTML = wins;
+    document.getElementById("numberOfLosses").innerHTML = losses;
+    document.getElementById("numberOfGuessesLeft").innerHTML = guessesLeft;
 }
+
