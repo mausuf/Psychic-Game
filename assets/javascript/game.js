@@ -1,4 +1,5 @@
 var userLettersGuessed = []; //Memory to hold user letters guessed
+var userWinLetters = []; //Memory to hold winning letters
 var guessesLeft = 10; //Number of guess remaining
 var wins = 0; //Number of wins
 var losses = 0; //Number of losses
@@ -18,6 +19,7 @@ document.onkeyup = function(event) {
             wins++;
             guessesLeft = 10;
             userLettersGuessed = [];
+            userWinLetters.push(computerGuess);
             alert("You Win! :)");
         }
         else {
@@ -38,6 +40,7 @@ document.onkeyup = function(event) {
     }
     document.getElementById("userGuesses").innerHTML = userLettersGuessed;
     document.getElementById("numberOfWins").innerHTML = wins;
+    document.getElementById("winningLetters").innerHTML = userWinLetters;
     document.getElementById("numberOfLosses").innerHTML = losses;
     document.getElementById("numberOfGuessesLeft").innerHTML = guessesLeft;
 }
